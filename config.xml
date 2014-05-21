@@ -1,0 +1,26 @@
+<widget xmlns = "http://www.w3.org/ns/widgets"
+        xmlns:gap = "http://phonegap.com/ns/1.0"
+        id = "nl.counterculture.app"
+        version = "0.0.2">
+    <name>CounterCulture program</name>
+
+    <description>
+        CounterCulture festival program
+    </description>
+    
+    <author href="http://ooxo.nl" email="gabor@ooxo.nl">
+        OOXO-CyberPunX Dubbel Tag Team
+    </author>
+    
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="Fullscreen" value="true" />
+    <preference name="WebViewBounce" value="true" />
+    <preference name="Orientation" value="portrait" />
+
+    
+    
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
+    <!-- Define app icon for each platform. -->
+    <icon src="app_icon_rood.png" />
+</widget>
