@@ -2,10 +2,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id = "nl.counterculture.app"
         version = "0.0.2">
-    <name>CounterCulture program</name>
+    <name>CounterCulture 2014</name>
 
     <description>
-        CounterCulture festival program
+        CounterCulture festival 2014
     </description>
     
     <author href="http://ooxo.nl" email="gabor@ooxo.nl">
