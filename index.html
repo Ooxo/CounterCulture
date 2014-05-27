@@ -29,12 +29,25 @@
     
     function onBackButton(e) {
         //alert("bla bla");
+        
+        navigator.notification.alert(
+            'You are the winner!',  // message
+            alertDismissed,         // callback
+            'Game Over',            // title
+            'Done'                  // buttonName
+        );   
+        
+        
+        cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         e.preventDefault();
-        cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["history.back()"]);
     }
         
         
-        
+     function alertDismissed() {
+    // do something
+}
+
+
         
         
         
