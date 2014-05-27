@@ -30,8 +30,8 @@
     
     function onBackButton(e) {
         //alert("bla bla");
-        
-        navigator.app.exitApp();
+        cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
+//        navigator.app.exitApp();
         
         navigator.notification.alert(
             'You are the winner!',  // message
@@ -43,7 +43,7 @@
         
         
         
-        cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
+        
         e.preventDefault();
     }
         
