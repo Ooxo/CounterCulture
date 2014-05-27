@@ -14,21 +14,23 @@
     //
     function onDeviceReady() {
         var ref = window.open('http://counterculturefestival.nl/APP/','_self','location=yes');       // ,'closebuttoncaption=back'
-         //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-         //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-         //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
+        //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
+        //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
+        //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
          
-         //ref.addEventListener('exit', function(event) { alert(event.type); });
+        //ref.addEventListener('exit', function(event) { alert(event.type); });
          
-         ref.addEventListener('exit', onBackButton, true);
-         ref.addEventListener("backbutton", onBackButton, true);
-         document.addEventListener("backbutton", onBackButton, true);
-         document.addEventListener("exit", onBackButton, true);
+        ref.addEventListener('exit', onBackButton);
+        ref.addEventListener("backbutton", onBackButton, true);
+        document.addEventListener("backbutton", onBackButton, true);
+        document.addEventListener("exit", onBackButton, true);
     }
     
     
     function onBackButton(e) {
         //alert("bla bla");
+        
+        navigator.app.exitApp();
         
         navigator.notification.alert(
             'You are the winner!',  // message
@@ -38,7 +40,7 @@
         );   
         
         
-        navigator.app.exitApp();
+        
         
         cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         e.preventDefault();
