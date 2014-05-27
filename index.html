@@ -14,7 +14,7 @@
     //
     function onDeviceReady() {
         alert("bla bla");
-        var ref = window.open('http://counterculturefestival.nl/APP/','_blank','location=yes');       // ,'closebuttoncaption=back'
+        var ref = window.open('http://counterculturefestival.nl/APP/','_blank','location=no');       // ,'closebuttoncaption=back'
         //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
         //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
         //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
@@ -30,9 +30,9 @@
     
     function onBackButton(e) {
         //alert("bla bla");
-        cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
-//        navigator.app.exitApp();
         
+        navigator.app.exitApp();
+        /*cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         navigator.notification.alert(
             'You are the winner!',  // message
             alertDismissed,         // callback
@@ -40,7 +40,7 @@
             'Done'                  // buttonName
         );   
         
-        
+        */
         
         
         
