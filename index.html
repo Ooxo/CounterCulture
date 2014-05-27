@@ -9,7 +9,7 @@
     // Wait for device API libraries to load
     //
     document.addEventListener("deviceready", onDeviceReady, true);
-    document.addEventListener("backbutton", onBackButton, true);
+    
     // device APIs are available
     //
     function onDeviceReady() {
@@ -21,9 +21,9 @@
          //ref.addEventListener('exit', function(event) { alert(event.type); });
          
          ref.addEventListener('exit', onBackButton, true);
-         
          ref.addEventListener("backbutton", onBackButton, true);
-         
+         document.addEventListener("backbutton", onBackButton, true);
+         document.addEventListener("exit", onBackButton, true);
     }
     
     

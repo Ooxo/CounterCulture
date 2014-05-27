@@ -26,4 +26,9 @@
     <gap:plugin name="org.apache.cordova.dialogs" />
     <!-- Define app icon for each platform. -->
     <icon src="app_icon_rood.png" />
+    
+    <feature name="App">
+        <param name="android-package" value="org.apache.cordova.App" />
+    </feature>
+    
 </widget>
