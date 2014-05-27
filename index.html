@@ -27,6 +27,7 @@
     
     
     function onBackButton() {
+        alert("bla bla");
         cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["history.back()"]);
     }
         
