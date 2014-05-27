@@ -38,6 +38,8 @@
         );   
         
         
+        navigator.app.exitApp();
+        
         cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         e.preventDefault();
     }
