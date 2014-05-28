@@ -49,15 +49,14 @@
             },
             function(){
                 //alert("Succesfully connected!");
-                var ref = window.open('http://counterculturefestival.nl/APP/','_self','location=no');  
+                var ref = window.open('http://counterculturefestival.nl/APP/','_blank','location=no');  
                 ref.addEventListener('exit', onBackButton);
             }
         );
     }
     
     
-    function onBackButton(e) {
-        alert("backbutton");
+    function onBackButton() {
         navigator.app.exitApp();
         /*cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         navigator.notification.alert(
@@ -68,7 +67,7 @@
         );   
         
         */
-        e.preventDefault();
+        //e.preventDefault();
     }
     /*function alertDismissed() {
         // do something
