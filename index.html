@@ -28,11 +28,14 @@
         
         /*Check for internet connection*/
         alert(navigator.network.connection.type);
-        if(navigator.network.connection.type == Connection.NONE){
-            alert("nocon");
-        }else{
-            alert("yescon");
+        if( !navigator.network ){
+            // set the parent windows navigator network object to the child window
+            navigator.network = window.top.navigator.network;
         }
+
+        // return the type of connection found
+        alert( (navigator.network.connection.type === "none" || navigator.network.connection.type === null || 
+          navigator.network.connection.type === "unknown" ) ? false : true );
     }
     
     
