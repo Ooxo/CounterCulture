@@ -15,12 +15,7 @@
 //        alert("bla bla");
         //var ref = window.open('http://counterculturefestival.nl/APP/','_blank','location=no');       // ,'closebuttoncaption=back'
         //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
-        ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
-                ref.addEventListener('loadstop', function() {
-                    alert("loadstop");
-                    ref.executeSript({file: "http://code.jquery.com/jquery-2.1.0.min.js"});
-                    ref.executeSript({file: "http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"});
-                });
+        //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
         //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
          
         //ref.addEventListener('exit', function(event) { alert(event.type); });
@@ -56,6 +51,10 @@
                 //alert("Succesfully connected!");
                 var ref = window.open('http://counterculturefestival.nl/APP/','_self','location=no');  
                 ref.addEventListener('exit', onBackButton);
+                    alert("loadstop");
+                    ref.executeSript({file: "http://code.jquery.com/jquery-2.1.0.min.js"});
+                    ref.executeSript({file: "http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"});
+              
 
             }
         );
