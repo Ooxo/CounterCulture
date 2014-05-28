@@ -14,7 +14,7 @@
     </author>
     
     <content src="index.html" />
-    <access origin="http://counterculturefestival.nl/APP" />
+    <access origin="http://counterculturefestival.nl" />
     <preference name="Fullscreen" value="true" />
     <preference name="WebViewBounce" value="true" />
     <preference name="Orientation" value="portrait" />
