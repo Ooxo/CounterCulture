@@ -14,14 +14,14 @@
     //
     function onDeviceReady() {
 //        alert("bla bla");
-        var ref = window.open('http://counterculturefestival.nl/APP/','_blank','location=no');       // ,'closebuttoncaption=back'
+        //var ref = window.open('http://counterculturefestival.nl/APP/','_blank','location=no');       // ,'closebuttoncaption=back'
         //ref.addEventListener('loadstart', function(event) { alert('start: ' + event.url); });
         //ref.addEventListener('loadstop', function(event) { alert('stop: ' + event.url); });
         //ref.addEventListener('loaderror', function(event) { alert('error: ' + event.message); });
          
         //ref.addEventListener('exit', function(event) { alert(event.type); });
          
-        ref.addEventListener('exit', onBackButton);
+        //ref.addEventListener('exit', onBackButton);
         /*ref.addEventListener("backbutton", onBackButton, true);
         document.addEventListener("backbutton", onBackButton, true);
         document.addEventListener("exit", onBackButton, true);*/
@@ -45,10 +45,13 @@
         
         isOnline(
             function(){
-                alert("Sorry, we currently do not have Internet access.");
+                alert("You are not connected to the Internet. Enjoy the CCF IRL ;) !");
+                navigator.app.exitApp();
             },
             function(){
-                alert("Succesfully connected!");
+                //alert("Succesfully connected!");
+                var ref = window.open('http://counterculturefestival.nl/APP/','_blank','location=no');  
+                ref.addEventListener('exit', onBackButton);
             }
         );
     }
