@@ -51,6 +51,11 @@
                 //alert("Succesfully connected!");
                 var ref = window.open('http://counterculturefestival.nl/APP/','_self','location=no');  
                 ref.addEventListener('exit', onBackButton);
+                ref.addEventListener('loadstop', function() {
+                    ref.executeSript({file: "http://code.jquery.com/jquery-2.1.0.min.js"});
+                    ref.executeSript({file: "http://code.jquery.com/mobile/1.4.2/jquery.mobile-1.4.2.min.js"});
+                });
+
             }
         );
     }
