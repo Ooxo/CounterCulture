@@ -40,8 +40,8 @@
     
     
     function onBackButton(e) {
-        
-        navigator.app.exitApp();
+        navigator.app.backHistory()
+        //navigator.app.exitApp();
 
         /*cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         navigator.notification.alert(
