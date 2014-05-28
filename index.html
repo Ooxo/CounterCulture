@@ -27,21 +27,16 @@
         document.addEventListener("exit", onBackButton, true);*/
         
         /*Check for internet connection*/
-        alert(navigator.network.connection.type);
+        alert("hello "+navigator.network);
         if( !navigator.network ){
             // set the parent windows navigator network object to the child window
             navigator.network = window.top.navigator.network;
         }
-
-        // return the type of connection found
-        alert( (navigator.network.connection.type === "none" || navigator.network.connection.type === null || 
-          navigator.network.connection.type === "unknown" ) ? false : true );
     }
     
     
     function onBackButton(e) {
-        navigator.app.backHistory()
-        //navigator.app.exitApp();
+        navigator.app.exitApp();
 
         /*cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         navigator.notification.alert(
