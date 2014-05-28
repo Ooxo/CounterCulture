@@ -25,6 +25,13 @@
         /*ref.addEventListener("backbutton", onBackButton, true);
         document.addEventListener("backbutton", onBackButton, true);
         document.addEventListener("exit", onBackButton, true);*/
+        
+        /*Check for internet connection*/
+        if(navigator.network.connection.type == Connection.NONE){
+            alert("nocon");
+        }else{
+            alert("yescon");
+        }
     }
     
     
