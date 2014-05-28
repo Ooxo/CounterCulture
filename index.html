@@ -27,17 +27,35 @@
         document.addEventListener("exit", onBackButton, true);*/
         
         /*Check for internet connection*/
-        alert("hello "+navigator.onLine);
-        if( !navigator.network ){
-            // set the parent windows navigator network object to the child window
-            navigator.network = window.top.navigator.network;
+        function isOnline(no,yes){
+            var xhr = XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject('Microsoft.XMLHttp');
+            xhr.onload = function(){
+                if(yes instanceof Function){
+                    yes();
+                }
+            }
+            xhr.onerror = function(){
+                if(no instanceof Function){
+                    no();
+                }
+            }
+            xhr.open("GET","http://perdu.com", true);
+            xhr.send(); 
         }
+        
+        isOnline(
+            function(){
+                alert("Sorry, we currently do not have Internet access.");
+            },
+            function(){
+                alert("Succesfully connected!");
+            }
+        );
     }
     
     
     function onBackButton(e) {
         navigator.app.exitApp();
-
         /*cordova.exec(null, null, "InAppBrowser", "injectScriptCode", ["window.history.back()"]);
         navigator.notification.alert(
             'You are the winner!',  // message
@@ -47,22 +65,11 @@
         );   
         
         */
-        
-        
-        
         e.preventDefault();
     }
-        
-        
-    function alertDismissed() {
+    /*function alertDismissed() {
         // do something
-    }
-
-
-        
-        
-        
-
+    }*/
 
     </script>
     <style>
