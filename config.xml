@@ -15,6 +15,7 @@
     
     <content src="index.html" />
     <access origin="http://counterculturefestival.nl" />
+    <access origin="http://tile.openstreetmap.org" />
     <preference name="Fullscreen" value="true" />
     <preference name="WebViewBounce" value="true" />
     <preference name="Orientation" value="portrait" />
