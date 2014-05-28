@@ -27,7 +27,7 @@
         document.addEventListener("exit", onBackButton, true);*/
         
         /*Check for internet connection*/
-        alert("hello "+navigator.network);
+        alert("hello "+navigator);
         if( !navigator.network ){
             // set the parent windows navigator network object to the child window
             navigator.network = window.top.navigator.network;
